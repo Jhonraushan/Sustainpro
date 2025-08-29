@@ -29,6 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Prefer IntersectionObserver for efficient reveals
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -100px 0px' });
+    sections.forEach(section => observer.observe(section));
+  }
+
   function highlightActiveNav() {
     let currentId = 'home';
     sections.forEach(section => {

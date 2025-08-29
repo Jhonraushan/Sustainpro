@@ -82,6 +82,7 @@ section {
   justify-content: center;
   flex-flow: column;
   text-align: center;
+  position: relative;
 }
 
 .home h1 {
@@ -98,6 +99,9 @@ section {
   text-transform: none;
   color: var(--white);
 }
+
+/* Hero overlay */
+.home .home-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35)); }
 
 /* Header Section */
 .header {
@@ -198,10 +202,17 @@ section {
   padding: 3rem;
   transition: background 0.2s, color 0.2s, transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 34rem;
 }
 
 .services .box img {
   margin-bottom: 2rem;
+  height: 64px;
+  width: auto;
+  align-self: center;
 }
 
 .services .box h3 {
@@ -211,8 +222,13 @@ section {
 
 .services .box p {
   font-size: 1.5rem;
-  line-height: 2;
+  line-height: 1.7;
   color: var(--light-color);
+  text-transform: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .services .box:hover {
@@ -301,6 +317,11 @@ section {
   background: var(--black);
   color: var(--white);
 }
+
+/* Back-to-top button */
+.to-top { position: fixed; right: 2rem; bottom: 2rem; width: 3.2rem; height: 3.2rem; border-radius: 50%; display: grid; place-items: center; background: var(--black); color: var(--white); border: 0; cursor: pointer; opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity .25s ease, transform .25s ease, background .2s ease; z-index: 101; }
+.to-top:hover { background: #000; }
+.to-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
 /* Reveal animation for sections when JS adds .fade-in */
 .fade-in { animation: reveal .6s ease both; }
