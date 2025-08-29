@@ -207,7 +207,7 @@ section {
 
 /* Services Section */
 .services {
-  background: var(--light-bg);
+  background: linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);
 }
 
 .services .box-container {
@@ -304,7 +304,7 @@ section {
 .contact-box-large h2 {
   margin-top: 0;
   font-weight: bold;
-  color: #1b351d;
+  color: #0e7a3e;
   font-size: 64px;
 }
 
