@@ -71,6 +71,27 @@ section {
   text-align: center;
 }
 
+/* Emphasized section headings */
+.services .heading,
+#team .heading {
+  color: #0e7a3e;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  position: relative;
+}
+
+.services .heading::after,
+#team .heading::after {
+  content: "";
+  display: block;
+  width: 8rem;
+  height: 0.4rem;
+  margin: 1rem auto 0;
+  border-radius: 0.2rem;
+  background: linear-gradient(90deg, #0e7a3e, #66bb6a);
+}
+
 /* Home Section */
 .home {
   height: 100vh;
@@ -241,6 +262,38 @@ section {
 .services .box:hover img {
   filter: invert(100%);
 }
+
+/* Team Section distinct background but shared layout */
+.team {
+  background: linear-gradient(180deg, #ffffff 0%, #f0fff5 100%);
+}
+
+.team .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 5rem;
+}
+
+.team .box {
+  background: var(--white);
+  text-align: center;
+  border-radius: 1rem;
+  padding: 3rem;
+  transition: background 0.2s, color 0.2s, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.team .box h3 { margin-bottom: 1.2rem; font-size: 2rem; }
+.team .box p { font-size: 1.5rem; line-height: 1.8; color: var(--light-color); text-transform: none; }
+
+.team .box:hover {
+  background: var(--black);
+  color: var(--white);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.team .box:hover img { filter: invert(100%); }
 
 /* Contact Section */
 .contact-box-large {
