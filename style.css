@@ -136,6 +136,16 @@ section {
   margin-left: 3rem;
 }
 
+/* Navbar link effects */
+.header .navbar a { position: relative; }
+.header .navbar a::after { content: ""; position: absolute; left: 0; bottom: -0.6rem; height: 2px; width: 0; background: currentColor; transition: width 0.25s ease; }
+.header .navbar a:hover::after,
+.header .navbar a:focus-visible::after,
+.header .navbar a.active::after { width: 100%; }
+.header .navbar a.active { font-weight: 600; }
+
+
+
 .header .menu {
   font-size: 2rem;
   color: var(--white);
@@ -165,7 +175,10 @@ section {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform .35s ease;
 }
+
+.about .box-container .box .image:hover img { transform: scale(1.03); }
 
 /* Services Section */
 .services {
@@ -183,7 +196,8 @@ section {
   text-align: center;
   border-radius: 1rem;
   padding: 3rem;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
 }
 
 .services .box img {
@@ -204,6 +218,8 @@ section {
 .services .box:hover {
   background: var(--black);
   color: var(--white);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
 .services .box:hover img {
@@ -285,6 +301,10 @@ section {
   background: var(--black);
   color: var(--white);
 }
+
+/* Reveal animation for sections when JS adds .fade-in */
+.fade-in { animation: reveal .6s ease both; }
+@keyframes reveal { from { opacity: .001; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 .footer .socials ion-icon:nth-child(1) {
   color: var(--google-color);

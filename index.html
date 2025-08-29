@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SustainPro provides GHG accounting, sustainability reporting, CDP disclosure, SBTi, decarbonization roadmaps, carbon neutrality, and net-zero services." />
     <title>Sustain Pro</title>
     <link
       rel="stylesheet"
@@ -21,24 +22,24 @@
 
 <!-- home section starts -->
 <section class="home" id="home">
-    <h1>Fostering a sustainable future</h1>
-    <h2>Welcome to our company website specializing in sustainability services. 
+    <div class="home-overlay"></div>
+    <h1 class="reveal">Fostering a sustainable future</h1>
+    <h2 class="reveal delay-1">Welcome to our company website specializing in sustainability services. 
       Our main focus areas include GHG Accounting, Verification, and Assurance;
        Sustainability Reporting (GRI, SASB, BRSR); CDP Disclosure; SBTi; Decarbonization Roadmap;
         Carbon Neutrality; and Net Zero.</h2>
-   
   </section>
   <!-- home section ends -->
 
 <!-- header section starts -->
 <header class="header">
     <a href="#" class="logo"><h1>SustainPro</h1></a>
-    <a class="menu fas fa-bars"></a>
-    <nav class="navbar">
-      <a href="#">home</a>
+    <button class="menu fas fa-bars" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation"></button>
+    <nav class="navbar" id="navbar">
+      <a href="#home">home</a>
       <a href="#about">about</a>
       <a href="#services">services</a>
-      <a href="#Our Expert Team">Our Expert Team</a>
+      <a href="#team">Our Expert Team</a>
       <a href="#contact">contact</a>
     </nav>
   </header>
@@ -59,7 +60,7 @@
 
       <div class="box">
         <div class="image">
-          <img src="images/Pic.jpg" alt="" />
+          <img src="images/pic.jpg" alt="Team working towards sustainability" />
         </div>
       </div>
     </div>
@@ -72,7 +73,7 @@
     <h1 class="heading">our services</h1>
     <div class="box-container">
       <div class="box">
-        <img src="images/tree4.png" alt="" />
+        <img src="images/tree4.png" alt="Tree icon representing GHG accounting" />
         <h3>GHG Accounting, Verification, and Assurance</h3>
         <p>
           Accurately measure and report greenhouse gas emissions, ensuring credibility and compliance.
@@ -80,7 +81,7 @@
       </div>
   
       <div class="box">
-        <img src="images/tree5.png" alt="" />
+        <img src="images/tree5.png" alt="Leaf icon representing sustainability reporting" />
         <h3>Sustainability Reporting</h3>
         <p>
           Transparently disclose environmental, social, and governance performance with industry-leading frameworks such as GRI, SASB, and BRSR.
@@ -88,7 +89,7 @@
       </div>
   
       <div class="box">
-        <img src="images/tree6.png" alt="" />
+        <img src="images/tree6.png" alt="Document icon representing CDP disclosure" />
         <h3>CDP Disclosure</h3>
         <p>
           Effectively report environmental impacts to CDP, demonstrating your commitment to climate action and sustainability.
@@ -96,15 +97,16 @@
       </div>
   
       <div class="box">
-        <img src="images/tree7.png" alt="" />
+        <img src="images/tree7.png" alt="Target icon representing SBTi" />
         <h3>SBTi</h3>
         <p>
           Set science-based targets in line with the latest climate science, driving meaningful reductions in emissions.
+        </p>
       </div>
   
       <div class="box">
-        <img src="images/tree8.png" alt="" />
-        <h3>Decarbonization Roadmapt</h3>
+        <img src="images/tree8.png" alt="Roadmap icon representing decarbonization" />
+        <h3>Decarbonization Roadmap</h3>
         <p>
           Evaluate your organization's carbon footprint and identify key areas for emissions reduction. Create a comprehensive plan to transition to a low-carbon economy, setting achievable targets and milestones.
 Execute decarbonization strategies, leveraging innovative technologies and sustainable practices.
@@ -118,7 +120,7 @@ Execute decarbonization strategies, leveraging innovative technologies and susta
 
 
   <!-- works section starts -->
-  <section class="services" id="services">
+  <section class="services" id="team">
 
     <h3 class="heading">Our Expert Team</h3>
 
@@ -148,8 +150,7 @@ Execute decarbonization strategies, leveraging innovative technologies and susta
 
         <p>
 
-          .Our experts hep you  in guiding action, deciphering data, and 
-
+          Our experts help you in guiding action, deciphering data, and 
           shaping policy for a sustainable and resilient future in a warming world.
 
         </p>
@@ -164,10 +165,8 @@ Execute decarbonization strategies, leveraging innovative technologies and susta
 
         <p>
 
-          Our Professionals help in Communicating corporate environmental, social, 
-
+          Our professionals help in communicating corporate environmental, social, 
           and governance (ESG) performance to stakeholders, 
-
           fostering transparency and responsible business practices.
 
         </p>
@@ -183,10 +182,8 @@ Execute decarbonization strategies, leveraging innovative technologies and susta
   </section>
 
   
-
-  <script src="script.js"></script>
-
-      
+  <button class="to-top" aria-label="Back to top"><span class="fas fa-arrow-up"></span></button>
+  
   <!-- works section ends -->
 
 
@@ -210,7 +207,7 @@ Execute decarbonization strategies, leveraging innovative technologies and susta
   
       <label for="phone">Phone:</label>
   
-      <a href="tel:+1234567890" target="_blank">+1234567890</a>
+      <a href="tel:+1234567890" target="_blank">+91 8210022066</a>
   
     </p>
     <p></p>
