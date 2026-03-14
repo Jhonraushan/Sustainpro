@@ -357,6 +357,50 @@ section {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Why Choose Us Section */
+.why-us {
+  background: var(--white);
+}
+
+.why-us .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 3rem;
+}
+
+.why-us .box {
+  text-align: center;
+  padding: 4rem 3rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #f0fff5 0%, #e8f5e9 100%);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.why-us .box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.why-us .box .why-icon {
+  font-size: 4rem;
+  color: var(--green);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.why-us .box h3 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: var(--black);
+}
+
+.why-us .box p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: var(--light-color);
+  text-transform: none;
+}
+
 /* Team Section */
 .team {
   background: linear-gradient(180deg, #ffffff 0%, #f0fff5 100%);
