@@ -82,13 +82,6 @@ Output goes to `dist/` folder.
 npm run preview
 ```
 
-## Contact
-
-- **Email:** business@sustainpro.in
-- **Phone:** +91 8210022066
-- **Location:** Indore, Madhya Pradesh 452010, India
-- **LinkedIn:** [SustainPro Energy & Environment](https://www.linkedin.com/company/sustainpro-energy-environment)
-
 ## License
 
 All rights reserved. &copy; 2026 SustainPro Energy & Environment Services Pvt Ltd.
