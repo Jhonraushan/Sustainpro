@@ -46,6 +46,10 @@ html::-webkit-scrollbar-thumb {
   background: var(--black);
 }
 
+body {
+  margin: 0;
+}
+
 /* Section General */
 section {
   padding: 5rem 9%;
@@ -96,7 +100,7 @@ section {
 /* Home Section */
 .home {
   height: 100vh;
-  background-image: url('images/pic1.jpg');
+  background-image: url('/images/pic1.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -313,12 +317,6 @@ section {
   min-height: 30rem;
 }
 
-.services .box img {
-  margin-bottom: 2rem;
-  height: 64px;
-  width: auto;
-}
-
 .services .box .service-icon {
   font-size: 4.5rem;
   color: var(--green);
@@ -343,10 +341,6 @@ section {
   color: var(--white);
   transform: translateY(-6px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-}
-
-.services .box:hover img {
-  filter: invert(100%);
 }
 
 .services .box:hover .service-icon {
