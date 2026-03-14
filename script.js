@@ -20,15 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function fadeInOnScroll() {
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        section.classList.add('fade-in');
-      }
-    });
-  }
-
   // Prefer IntersectionObserver for efficient reveals
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
@@ -65,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     menuButton.classList.remove('fa-close');
     menuButton.setAttribute('aria-expanded', 'false');
     toggleHeaderActive();
-    fadeInOnScroll();
     highlightActiveNav();
     if (toTopButton) {
       if (window.scrollY > 400) {
@@ -78,8 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Close menu when a nav link is clicked (mobile UX)
   navbar.addEventListener('click', (e) => {
-    const target = e.target;
-    if (target && target.matches('a[href^="#"]')) {
+    if (e.target.matches('a[href^="#"]')) {
       navbar.classList.remove('show');
       menuButton.classList.remove('fa-close');
       menuButton.setAttribute('aria-expanded', 'false');
@@ -87,12 +76,53 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   toggleHeaderActive();
-  fadeInOnScroll();
   highlightActiveNav();
 
   if (toTopButton) {
     toTopButton.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
+
+  // Stats counter animation
+  const statNumbers = document.querySelectorAll('.stat-number');
+  let statsAnimated = false;
+
+  function animateCounters() {
+    statNumbers.forEach(el => {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const duration = 1500;
+      const start = performance.now();
+
+      function step(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease out quad
+        const eased = 1 - (1 - progress) * (1 - progress);
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target;
+        }
+      }
+      requestAnimationFrame(step);
+    });
+  }
+
+  if ('IntersectionObserver' in window && statNumbers.length) {
+    const statsSection = document.querySelector('.stats');
+    if (statsSection) {
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !statsAnimated) {
+            statsAnimated = true;
+            animateCounters();
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      statsObserver.observe(statsSection);
+    }
   }
 });
