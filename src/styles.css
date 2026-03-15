@@ -351,6 +351,103 @@ section {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Clients Section */
+.clients {
+  background: var(--white);
+  overflow: hidden;
+}
+
+.clients-subtitle {
+  text-align: center;
+  font-size: 1.7rem;
+  color: var(--light-color);
+  margin-top: -3rem;
+  margin-bottom: 4rem;
+  text-transform: none;
+}
+
+.clients-marquee {
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.clients-marquee::before,
+.clients-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.clients-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--white), transparent);
+}
+
+.clients-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--white), transparent);
+}
+
+.clients-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.clients-track:hover {
+  animation-play-state: paused;
+}
+
+.client-card {
+  flex-shrink: 0;
+  width: 18rem;
+  height: 12rem;
+  background: var(--white);
+  border: 1px solid #e8e8e8;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--green-light);
+}
+
+.client-logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: 14rem;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.client-card:hover .client-logo {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 /* Why Choose Us Section */
 .why-us {
   background: var(--white);

@@ -3,6 +3,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Stats from './components/Stats'
 import Services from './components/Services'
+import Clients from './components/Clients'
 import WhyUs from './components/WhyUs'
 import Team from './components/Team'
 import Contact from './components/Contact'
@@ -17,6 +18,7 @@ function App() {
       <About />
       <Stats />
       <Services />
+      <Clients />
       <WhyUs />
       <Team />
       <Contact />
